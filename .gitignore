@@ -1,0 +1,5 @@
+# Build artifacts / store packages
+*.zip
+
+# macOS
+.DS_Store
