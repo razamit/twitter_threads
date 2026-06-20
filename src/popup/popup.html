@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thread Numbering</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="panel">
+    <header class="panel-header">
+      <h1 class="panel-title">Thread Numbering</h1>
+      <p class="panel-subtitle">Choose how your thread posts are numbered.</p>
+    </header>
+
+    <section class="field">
+      <span class="field-label">Position</span>
+      <div class="segmented" id="tn-position" role="group" aria-label="Number position">
+        <button type="button" class="segment" data-position="prefix">Start</button>
+        <button type="button" class="segment" data-position="suffix">End</button>
+      </div>
+    </section>
+
+    <section class="field">
+      <span class="field-label">Format</span>
+      <div class="options" id="tn-formats"></div>
+    </section>
+
+    <section class="field" id="tn-custom-row" hidden>
+      <label class="field-label" for="tn-custom">Custom template</label>
+      <input
+        type="text"
+        id="tn-custom"
+        class="text-input"
+        placeholder="{n}/{total}"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <span class="field-hint">Tokens: <code>{n}</code> = position, <code>{total}</code> = total.</span>
+    </section>
+
+    <section class="field">
+      <label class="field-label" for="tn-separator">Spacing</label>
+      <input
+        type="text"
+        id="tn-separator"
+        class="text-input text-input--narrow"
+        autocomplete="off"
+      />
+      <span class="field-hint">Characters between the number and the post text.</span>
+    </section>
+
+    <section class="preview">
+      <span class="preview-label">Preview</span>
+      <p class="preview-text" id="tn-preview"></p>
+    </section>
+  </main>
+
+  <script src="../shared/defaults.js"></script>
+  <script src="../shared/numbering-manager.js"></script>
+  <script src="../shared/settings-repository.js"></script>
+  <script src="popup-view-model.js"></script>
+  <script src="popup-entry.js"></script>
+</body>
+</html>
