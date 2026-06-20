@@ -28,16 +28,20 @@
   }
 
   /** Attach the token to the body at the configured position, preserving the
-   *  body's internal content and trimming only the join boundary. */
+   *  body's internal content and trimming only the join boundary. When
+   *  lineBreak is on, the number sits on its own line and the body starts on
+   *  the next row; otherwise they're joined by the spacing separator. */
   function applyPosition(body, token, settings) {
-    const separator = settings.separator != null ? settings.separator : ' ';
     if (!token) return body;
+    const joiner = settings.lineBreak
+      ? '\n'
+      : (settings.separator != null ? settings.separator : ' ');
     if (settings.position === TN.POSITIONS.SUFFIX) {
       const left = body.replace(/\s+$/, '');
-      return left ? left + separator + token : token;
+      return left ? left + joiner + token : token;
     }
     const right = body.replace(/^\s+/, '');
-    return right ? token + separator + right : token;
+    return right ? token + joiner + right : token;
   }
 
   /** Remove a previously-inserted numbering token at the configured position

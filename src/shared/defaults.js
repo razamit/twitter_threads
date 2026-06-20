@@ -27,6 +27,7 @@
     position: 'prefix',
     formatType: 'count-total',
     customTemplate: '{n}/{total}',
-    separator: ' ', // characters placed between the number and the post body
+    lineBreak: true, // put the number on its own line, body starts on the next row
+    separator: ' ', // spacing used between number and body when lineBreak is off
   };
 })(window.TN = window.TN || {});

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Thread Numberer for X",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Auto-number your X (Twitter) thread posts in any format with one click. Re-numbers and updates totals as you add or remove posts.",
   "permissions": ["storage"],
   "action": {

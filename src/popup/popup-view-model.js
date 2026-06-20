@@ -30,6 +30,8 @@
       formats: d.getElementById('tn-formats'),
       customRow: d.getElementById('tn-custom-row'),
       custom: d.getElementById('tn-custom'),
+      lineBreak: d.getElementById('tn-linebreak'),
+      separatorRow: d.getElementById('tn-separator-row'),
       separator: d.getElementById('tn-separator'),
       preview: d.getElementById('tn-preview'),
     };
@@ -59,6 +61,9 @@
     this.els.custom.addEventListener('input', function () {
       self.update({ customTemplate: self.els.custom.value });
     });
+    this.els.lineBreak.addEventListener('change', function () {
+      self.update({ lineBreak: self.els.lineBreak.checked });
+    });
     this.els.separator.addEventListener('input', function () {
       self.update({ separator: self.els.separator.value });
     });
@@ -83,6 +88,9 @@
 
     this.els.customRow.hidden = this.settings.formatType !== TN.FORMAT_TYPES.CUSTOM;
     setInputValue(this.els.custom, this.settings.customTemplate || '');
+
+    this.els.lineBreak.checked = !!this.settings.lineBreak;
+    this.els.separatorRow.hidden = !!this.settings.lineBreak;
     setInputValue(this.els.separator, this.settings.separator);
   };
 

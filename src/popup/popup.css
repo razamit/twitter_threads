@@ -217,4 +217,26 @@ body {
   margin: 0;
   font-size: 14px;
   word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Toggle (checkbox) row */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.toggle-input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  margin: 0;
+  cursor: pointer;
+}
+
+.toggle-text {
+  font-size: 13px;
+  font-weight: 500;
 }
